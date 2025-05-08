@@ -1,0 +1,215 @@
+/* animated-responses.css - Animations for OLFU chatbot */
+
+/* Animation for messages appearing as they scroll into view */
+.animate-prepare {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Progressive text animation container */
+.progressive-text {
+    visibility: hidden;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+.already-visible {
+    visibility: visible;
+}
+
+/* Improved typing indicator animation */
+.animate-typing {
+    opacity: 0;
+    animation: fadeInTyping 0.3s ease forwards;
+}
+
+@keyframes fadeInTyping {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #aaa;
+    border-radius: 50%;
+    margin: 0 2px;
+    display: inline-block;
+    animation: typingBounce 1.2s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Fade-in animation for images */
+.chat-image {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: fadeInImage 0.5s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInImage {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Highlight effect for links as they appear */
+.progressive-text a {
+    position: relative;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.progressive-text a:hover {
+    color: var(--primary-color);
+}
+
+.progressive-text a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.progressive-text a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Animation for quick replies */
+.quick-reply-btn {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInQuickReply 0.5s ease forwards;
+}
+
+.quick-reply-btn:nth-child(1) { animation-delay: 0.1s; }
+.quick-reply-btn:nth-child(2) { animation-delay: 0.2s; }
+.quick-reply-btn:nth-child(3) { animation-delay: 0.3s; }
+.quick-reply-btn:nth-child(4) { animation-delay: 0.4s; }
+.quick-reply-btn:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInQuickReply {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Subtle pulse animation for the send button */
+.send-btn {
+    transition: all 0.3s ease;
+}
+
+.send-btn:hover {
+    animation: pulseSendBtn 1s infinite alternate;
+}
+
+@keyframes pulseSendBtn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Animate the chat body on load */
+.chat-body {
+    opacity: 0;
+    animation: fadeInChatBody 0.5s ease forwards;
+}
+
+@keyframes fadeInChatBody {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animate the chat header on load */
+.chat-header {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideDownHeader 0.5s ease forwards;
+}
+
+@keyframes slideDownHeader {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animate the chat footer on load */
+.chat-footer {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFooter 0.5s ease forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes slideUpFooter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Highlight text animation for important information */
+.highlight-text {
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, rgba(20, 168, 94, 0.2) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: highlightSweep 1.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes highlightSweep {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}

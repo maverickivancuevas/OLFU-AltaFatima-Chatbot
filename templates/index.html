@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLFU Antipolo SHS Chatbot</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/features.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <img src="static/olfu_logo.png" alt="OLFU Logo" id="chatbot-logo">
+            <div class="chat-header-text">
+                <h3>AltaFatima Chatbot</h3>
+                <p>How can I help you today?</p>
+            </div>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="message bot-message">
+                Hello there! 😊 I'm Oli, your friendly OLFU Antipolo Senior High School Assistant! 🎉 Got questions about our programs, admissions, or facilities? I'm here to help—just ask away! 💚✨
+                <div class="message-time">Now</div>
+            </div>
+            <!-- Add this inside the chat-body div, after the initial message -->
+            <div id="quick-reply-container" class="quick-reply-container"></div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
+            <button class="send-btn" id="send-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+    <script src="static/features.js"></script>
+    <script src="static/animation.js"></script>
+    <script src="static/integration-script.js"></script>
+
+</body>
+</html>
